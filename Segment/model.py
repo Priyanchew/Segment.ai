@@ -9,9 +9,8 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
 from yellowbrick.cluster import KElbowVisualizer
 from sklearn.cluster import KMeans
-from mpl_toolkits.mplot3d import Axes3D
-from matplotlib.colors import ListedColormap
-from sklearn import metrics
+from io import BytesIO
+import base64
 import warnings
 import sys
 
@@ -22,12 +21,13 @@ np.random.seed(42)
 
 # model.py
 
+customersdata = pd.read_csv('uploads/data.csv')
 def uploaded_file(filename):
     global customersdata
     name = 'uploads/' + filename
+    customersdata = pd.read_csv(name)
 
 
-customersdata = pd.read_csv('uploads/data.csv')
 
 # Load the dataset
 pallet = ["#682F2F", "#9E726F", "#D6B2B1", "#B9C0C9", "#9F8A78", "#F3AB60"]
@@ -81,6 +81,18 @@ def data_clean():
     return PCA_data
 
 
+def plot_to_img(plt):
+
+    # Save the plot to a BytesIO object
+    buffer = BytesIO()
+    plt.savefig(buffer, format='png')
+
+    # Encode the image as base64
+    plot_data = base64.b64encode(buffer.getvalue()).decode('utf-8')
+
+    plt.close()
+
+    return plot_data
 # Function to plot the reduced data in 3D
 def reduce_data_plot():
     fig = plt.figure(figsize=(10, 8))
@@ -109,7 +121,7 @@ def plot_3dcluster():
     ax = plt.subplot(111, projection='3d', label="bla")
     ax.set_title("The Plot Of The Clusters")
     ax.scatter(x, y, z, s=40, c=PCA_dataset["Clusters"], marker='o', cmap='viridis')
-    plt.show()
+    return plt
 
 
 def plot_against_two(jojo, hoho):
@@ -118,13 +130,13 @@ def plot_against_two(jojo, hoho):
                          hue=PCA_dataset["Clusters"], palette='viridis')
     pl.set_title(f"Cluster's {jojo} and {hoho} Profile")
     plt.legend()
-    plt.show()
+    return plt
 
 
 def indi_cluster():
     pl = sns.countplot(x=PCA_dataset["Clusters"], palette='viridis')
     pl.set_title("Arrangement Of The Clusters")
-    plt.show()
+    return plt
 
 
 def plot_data_cluster(data):
