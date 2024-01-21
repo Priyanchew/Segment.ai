@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    font-family: Arial, serif;
+    box-sizing: content-box;
+}
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 60px;
+    background-color: #2F7C45;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+nav ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: white;
+
+}
+nav ul li a:hover {
+    border: 2px solid white;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.left_nav{
+    font-family: "Lucida Console";
+    font-size: 1.5rem;
+    color: white;
+}
+.hero {
+    margin-top: 80px;
+    height: 400px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 100px;
+}
+
+.img {
+    float: right;
+}
+.welcome {
+    margin-right: 25%;
+    padding-bottom: 50px;
+}
+.typing {
+    font-size: 3.5rem;
+    font-family: "Lucida Console";
+    color: #0A3C1B;
+}
+.left {
+    display: block;
+    margin-right: 15%;
+}
+.get {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0A3C1B;
+    border-radius: 8px;
+    margin-top: 18px;
+}
+.get_text {
+    font-family: "Lucida Console";
+    font-size: 1.1rem;
+    color: white;
+    padding: 10px;
+}
+.upload {
+    margin-top: 16px;
+    background-color: #DAF5E4;
+}
+.get a {
+    text-decoration: none;
+    color: white;
+}
+.sec-3 {
+    margin-top: 100px;
+}
+.img1 {
+    float: left;
+    margin-left: 70px;
+}
+.img2 {
+    float: right;
+    margin-right: 90px;
+}

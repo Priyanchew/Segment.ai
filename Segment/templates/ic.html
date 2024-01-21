@@ -1,0 +1,88 @@
+<style>
+    .inp {
+        margin-top: 10px;
+        color: white;
+        padding: 10px;
+        background-color: #2F7C45;
+        border: none;
+        border-radius: 7px;
+    }
+    .inp:hover {
+        cursor: pointer;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .forms {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 20px;
+    }
+
+    .forms form {
+        margin-left: 40px; /* Add margin between forms */
+        margin-right: 40px;
+    }
+
+    aside {
+        padding: 20px;
+    }
+
+    </style>
+</head>
+
+<body>
+
+<aside><br>
+    <h3>Individual Cluster</h3>
+    <a href="/sidebar"><h3>Home</h3></a>
+    <p><b>Post-Clustering</b></p>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sidebar.css')}}">
+    <a href="/threed">
+        <i class="fa fa-laptop" aria-hidden="true"></i>
+        3D Cluster
+    </a>
+
+    <a href="/hah">
+        <i class="fa fa-clone" aria-hidden="true"></i>
+        Header against Header
+    </a>
+
+    <a href="/hac">
+        <i class="fa fa-star-o" aria-hidden="true"></i>
+        Header against Cluster
+    </a>
+    <i class="fa fa-trash-o" aria-hidden="true"></i>
+    Individual Cluster
+    </a>
+    <a href="javascript:void(0)">
+        <i class="fa fa-laptop" aria-hidden="true"></i>
+
+    </a>
+</aside>
+
+<div class="forms">
+    <form action="/process-form1" method="post">
+        <h2>Header 1</h2>
+        <input type="text" id="name1" name="name1" required>
+        <br>
+        <input class="inp" type="submit" value="Submit">
+        <img src="">
+    </form>
+
+    <form action="/process-form1" method="post">
+        <h2>Header 2</h2>
+        <input type="text" id="name1" name="name1" required>
+        <br>
+        <input class="inp" type="submit" value="Submit">
+        <img src="">
+    </form>
+</div>
+  
+  </body>
+  </html>
