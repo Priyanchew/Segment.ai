@@ -1,0 +1,38 @@
+* {
+    margin: 0px;
+}
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 60px;
+    background-color: #2F7C45;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+nav ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: white;
+
+}
+nav ul li a:hover {
+    border: 2px solid white;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.left_nav{
+    font-family: "Lucida Console";
+    font-size: 1.5rem;
+    color: white;
+}
+.img {
+    margin-left: 90px;
+    margin-top: 20px;
+}

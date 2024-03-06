@@ -1,0 +1,85 @@
+<style>
+    .hoho {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .forms {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 20px;
+    }
+
+    .forms form {
+        margin-left: 40px; /* Add margin between forms */
+        margin-right: 40px;
+    }
+    </style>
+
+<div class="banner">
+    <nav>
+        <div class="left_nav">Segment.ai</div>
+        <div class="right">
+            <ul>
+                <li><a href="/about">About</a></li>
+                <li><a href="/price">Pricing</a></li>
+                <li><a href="/login">Log in</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+
+<body>
+
+</html>
+
+
+<div class="hoho">
+    <aside>
+    <p><b>Clustering</b><br><b>Features</b></p>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sidebar.css') }}">
+
+    <a href="/threed">
+      <i class="fa fa-laptop" aria-hidden="true"></i>
+      3D Cluster
+    </a>
+    <a href="/hah">
+      <i class="fa fa-clone" aria-hidden="true"></i>
+      Header against Header
+    </a>
+    <a href="/hac">
+      <i class="fa fa-star-o" aria-hidden="true"></i>
+      Header against Cluster
+    </a>
+    <a href="/ic">
+      <i class="fa fa-trash-o" aria-hidden="true"></i>
+      Individual Cluster
+    </a>
+    <a href="javascript:void(0)">
+        <i class="fa fa-laptop" aria-hidden="true"></i>
+
+      </a>
+
+
+    </aside>
+    <div class="forms">
+    <form method="post">
+        <h2>Header 1</h2>
+        <input type="text" id="user_input1" name="user_input1" required>
+        <br>
+        <input class="inp" type="submit" value="Submit">
+    </form>
+
+    <form method="post">
+        <h2>Header 2          submit 1 then 2</h2>
+        <input type="text" id="user_input2" name="user_input2" required>
+        <br>
+        <input class="inp" type="submit" value="Submit">
+    </form>
+    </div>
+</div>
+  </body>
+  </html>

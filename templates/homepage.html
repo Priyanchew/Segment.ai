@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Segment.ai</title>
+</head>
+<style>
+    * {
+    margin: 0;
+    font-family: Arial, serif;
+    box-sizing: content-box;
+}
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 60px;
+    background-color: #2F7C45;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+nav ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: white;
+
+}
+nav ul li a:hover {
+    border: 2px solid white;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.left_nav{
+    font-family: "Lucida Console";
+    font-size: 1.5rem;
+    color: white;
+}
+.hero {
+    margin-top: 80px;
+    height: 400px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 100px;
+}
+
+.img {
+    float: right;
+}
+.welcome {
+    margin-right: 25%;
+    padding-bottom: 50px;
+}
+.typing {
+    font-size: 3.5rem;
+    font-family: "Lucida Console";
+    color: #0A3C1B;
+}
+.left {
+    display: block;
+    margin-right: 15%;
+}
+.get {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0A3C1B;
+    border-radius: 8px;
+    margin-top: 18px;
+}
+.get_text {
+    font-family: "Lucida Console";
+    font-size: 1.1rem;
+    color: white;
+    padding: 10px;
+}
+.upload {
+    margin-top: 16px;
+    background-color: #DAF5E4;
+}
+.get a {
+    text-decoration: none;
+    color: white;
+}
+.sec-3 {
+    margin-top: 100px;
+}
+.img1 {
+    float: left;
+    margin-left: 70px;
+}
+.img2 {
+    float: right;
+    margin-right: 90px;
+}
+    input[type="file"]::file-selector-button {
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        background-color: #237E44;
+        transition: 1s;
+        color: #fff;
+        font-size: 16px;
+    }
+    input[type="file"]::file-selector-button:hover {
+        color: #0A3C1B;
+        cursor: pointer;
+    }
+    input[type="submit"] {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #237E44;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    input[type="submit"]:hover {
+        background-color: #0A3C1B;
+    }
+</style>
+<body>
+<div class="banner">
+    <nav>
+        <div class="left_nav">Segment.ai</div>
+        <div class="right">
+            <ul>
+                <li><a href="/about">About</a></li>
+                <li><a href="/price">Pricing</a></li>
+                <li><a href="/login">Log in</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+<div class="hero">
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <div class="left">
+
+        <div class="welcome">
+            <span class="typing"></span>
+        </div>
+
+        <div class="upload">
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <label for="file"></label>
+            <input type="file" id="myFile" name="file" accept=".csv" required>
+            <input type="submit" value ="Upload">
+
+        </form>
+        </div>
+            {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class="flashes">
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+        <script>
+            var typed = new Typed(".typing", {
+            strings: ["Segment.ai"],
+            typeSpeed: 140,
+            backSpeed: 150,
+            loop: true
+           })
+        </script>
+        <div class="get">
+            <p class="get_text"><a href = "/splash">Get Started</a></p>
+        </div>
+    </div>
+    <img class="img" src="{{ url_for('static', filename='images/d1.png') }}" height="500px" width="500px">
+</div>
+<div class="sec-3">
+    <img class="img1" src="{{ url_for('static', filename='images/d2.png') }}" height="500px" width="500px">
+    <img class="img2" src="{{ url_for('static', filename='images/d3.png') }}" height="500px" width="500px">
+</div>
+</body>
+</html>
